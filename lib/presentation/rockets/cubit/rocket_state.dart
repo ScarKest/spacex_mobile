@@ -14,7 +14,7 @@ final class RocketError extends RocketState {
 }
 
 final class RocketSuccess extends RocketState {
-  final List<Rocket> rocket;
+  final RocketModel rocket;
 
   RocketSuccess({required this.rocket});
 }
