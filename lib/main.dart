@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:spacex_mobile/app.dart';
+import 'injection.dart' as di;
 
 void main() {
   runApp(const MyApp());
+
+  di.init();
 }
 
 

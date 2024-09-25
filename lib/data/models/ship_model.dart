@@ -16,14 +16,14 @@ class ShipModel {
   });
 
   factory ShipModel.fromJson(Map<String, dynamic> json) => ShipModel(
-        id: json["id"],
-        name: json["name"],
-        image: json["image"],
+        id: json['id'],
+        name: json['name'],
+        image: json['image'],
       );
 
   Map<String, dynamic> toJson() => {
-        "id": id,
-        "name": name,
-        "image": image,
+        'id': id,
+        'name': name,
+        'image': image,
       };
 }

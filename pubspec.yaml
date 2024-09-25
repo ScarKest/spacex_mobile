@@ -10,7 +10,12 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.6
-
+  flutter_bloc: ^8.1.6
+  bloc: ^8.1.4
+  http: ^1.2.2
+  dartz: ^0.10.1
+  get_it: ^8.0.0
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
