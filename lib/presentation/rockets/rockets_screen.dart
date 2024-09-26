@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:spacex_mobile/data/models/rocket_model.dart';
 import 'package:spacex_mobile/injection.dart';
@@ -15,17 +13,6 @@ class RocketsScreen extends StatefulWidget {
 
 class _RocketsScreenState extends State<RocketsScreen> {
   late RocketCubit rocketCubit;
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    rocketCubit.close();
-    super.dispose();
-  }
-
   void _getRockets(BuildContext contextBloc) {
     final rocketCubit = contextBloc.read<RocketCubit>();
     rocketCubit.getRocket();
@@ -43,7 +30,6 @@ class _RocketsScreenState extends State<RocketsScreen> {
           builder: (context, state) {
             _getRockets(context);
             if (state is RocketSuccess) {
-              // log(state.rocket.toString());
               RocketModel rocketModel = state.rocket;
               return ListView.builder(
                 itemCount: rocketModel.data.rockets.length,

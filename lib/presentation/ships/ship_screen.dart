@@ -31,7 +31,6 @@ class _ShipsScreenState extends State<ShipsScreen> {
           builder: (context, state) {
             _getShips(context);
             if (state is ShipSuccess) {
-              // log(state.Ship.toString());F
               List<Ship> shipModel = state.ship.data.ships;
               return ListView.builder(
                 itemCount: shipModel.length,
