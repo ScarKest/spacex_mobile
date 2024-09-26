@@ -2,28 +2,41 @@ import 'dart:convert';
 
 ShipModel shipModelFromJson(String str) => ShipModel.fromJson(json.decode(str));
 
-String shipModelToJson(ShipModel data) => json.encode(data.toJson());
-
 class ShipModel {
-  final String id;
-  final String name;
-  final String image;
+  final Data data;
 
   ShipModel({
-    required this.id,
-    required this.name,
-    required this.image,
+    required this.data,
   });
 
   factory ShipModel.fromJson(Map<String, dynamic> json) => ShipModel(
-        id: json['id'],
-        name: json['name'],
-        image: json['image'],
+        data: Data.fromJson(json['data']),
       );
+}
 
-  Map<String, dynamic> toJson() => {
-        'id': id,
-        'name': name,
-        'image': image,
-      };
+class Data {
+  final List<Ship> ships;
+
+  Data({
+    required this.ships,
+  });
+
+  factory Data.fromJson(Map<String, dynamic> json) => Data(
+        ships: List<Ship>.from(json['ships'].map((x) => Ship.fromJson(x))),
+      );
+}
+
+class Ship {
+  final String image;
+  final String name;
+
+  Ship({
+    required this.image,
+    required this.name,
+  });
+
+  factory Ship.fromJson(Map<String, dynamic> json) => Ship(
+        image: (json['image'] != null) ? json['image'] : '',
+        name: json['name'],
+      );
 }
